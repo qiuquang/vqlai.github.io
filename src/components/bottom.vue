@@ -8,8 +8,7 @@
   	    <img src="../common/images/code.png">
   	    <dl>
   	      <dt>Contact By Email</dt>
-  	      <dd>Mail1: <a href="mailto:info@example.com">info@example1.com</a></dd>
-  	      <dd>Mail2: <a href="mailto:info@example.com">info@example2.com</a></dd>
+  	      <dd>Mail: <a title="点我给我发邮件" href="mailto:18306485667@163.com">18306485667@163.com</a></dd>
   	    </dl>
   	  </div>
   	  <p v-text="desc"></p>
@@ -23,7 +22,7 @@ export default {
   data () {
     return {
     	title: '联系我',
-    	desc: '© 2018 Preface . All rights reserved | Design by cisco lai.'
+    	desc: '© 2022 Preface . All rights reserved | Design by Quan Qiu.'
     }
   }
 }

@@ -8,43 +8,48 @@
   	  	<li>
   	  		<div class="content_left tx_right">
   	  		  <span class="s1"></span>
-  	  		  <h4>2014 - 2015 </h4>
+  	  		  <h4>2011.09 - 2015.06 </h4>
   	  		</div>
   	  		<div class="content_right tx_left">
-  	  		  <h4>公司名1</h4>
-  	  		  <p>相关项目详细介绍...</p>
+  	  		  <h4>中国海洋大学</h4> &nbsp;&nbsp;&nbsp;本科
+  	  		  <p>在工程学院进行自动化专业学习</p>
   	  		</div>
   	  		<div class="clearfix"></div>
   	  	</li>
   	  	<li>
   	  		<div class="content_left tx_right">
   	  		  <span class="s2"></span>
-  	  		  <h4>2015 - 2016 </h4>
+  	  		  <h4>2015.08 - 2016.12 </h4>
   	  		</div>
   	  		<div class="content_right tx_left">
-  	  		  <h4>公司名2</h4>
-  	  		  <p>相关项目详细介绍...</p>
+  	  		  <h4>青岛海信网络科技股份有限公司</h4>&nbsp;&nbsp;&nbsp;测试工程师
+  	  		  <div class="fuze">负责地磁检测器、信号机、实战平台（软）功能测试。</div>
+				  <p>（1）地磁和信号机测试，负责测试环境搭建、设备接入及设备的环境测试、功能测试及性能测试，发现bug并记录。</p>
+				  <p>
+（2）实战平台测试，负责测试环境部署，包括打war包，tomcat配置、数据库安装配置、服务器配置等，功能测试主要从用户使用功能角度上，结合产品规格说明书进行测试，并记录bug。</p>
   	  		</div>
   	  		<div class="clearfix"></div>
   	  	</li>
   	  	<li>
   	  		<div class="content_left tx_right">
   	  		  <span class="s1"></span>
-  	  		  <h4>2016 - 2017 </h4>
+  	  		  <h4>2017.01 - 2018.11 </h4>
   	  		</div>
   	  		<div class="content_right tx_left">
-  	  		  <h4>公司名3</h4>
-  	  		  <p>相关项目详细介绍...</p>
+  	  		  <h4>青岛海信网络科技股份有限公司</h4>
+  	  		  <div class="fuze">负责可视化指挥系统、涉案视频管理系统的前端开发和后台维护。</div>
+				可视化指挥系统
+
   	  		</div>
   	  		<div class="clearfix"></div>
   	  	</li>
   	  	<li>
   	  		<div class="content_left tx_right">
   	  		  <span class="s2"></span>
-  	  		  <h4>2017 - 2018 </h4>
+  	  		  <h4>2018.12 - 至今 </h4>
   	  		</div>
   	  		<div class="content_right tx_left">
-  	  		  <h4>公司名4</h4>
+  	  		  <h4>青岛民航凯亚系统集成有限公司</h4>
   	  		  <p>相关项目详细介绍...</p>
   	  		</div>
   	  		<div class="clearfix"></div>
@@ -91,4 +96,8 @@ export default {
 
   .tx_left{position:relative;text-align: left;box-sizing: border-box;border-left: 1px solid #999;}
   .tx_right{position:relative;text-align: right;box-sizing: border-box;}
+  .fuze{
+	  font-size: 16px;
+	  margin-bottom: 5px;
+  }
 </style>

@@ -5,7 +5,7 @@
   	  <h1 class="title">{{title}}</h1>
   	  <span class="border"></span>
   	  <div class="s_wrapper">
-  	  	<div class="progress-bar" v-for="item in skill">
+  	  	<div class="progress-bar" v-for="(item,index) in skill" :key="index">
   	      <progressBar :skill="item"></progressBar>
   	    </div>
   	  	<div class="clearfix"></div>
@@ -22,16 +22,15 @@ export default {
     return {
     	title: '我的技能',
     	skill: [
-    		{"type": "html/html5","percent": "90%"},
-    		{"type": "js/jquery","percent": "80%"},
-    		{"type": "css/css3","percent": "80%"},
-    		{"type": "sass/less","percent": "60%"},
-    		{"type": "photoshop","percent": "90%"},
-    		{"type": "bootstrap","percent": "80%"},
-    		{"type": "swiper","percent": "80%"},
-    		{"type": "seajs","percent": "80%"},
-    		{"type": "vuejs","percent": "60%"},
-    		{"type": "java/jsp","percent": "50%"}
+    		{"type": "Vue.js","percent": "90%"},
+    		{"type": "Element-ui","percent": "90%"},
+    		{"type": "Uni-app","percent": "80%"},
+    		{"type": "uView","percent": "80%"},
+    		{"type": "HTML","percent": "90%"},
+    		{"type": "JavaScript","percent": "80%"},
+    		{"type": "CSS","percent": "80%"},
+    		{"type": "VuePress","percent": "80%"},
+    		{"type": "Nginx","percent": "70%"}
     	]
     }
   },
