@@ -15,6 +15,16 @@ export default new Router({
       path: '/index',
       name: 'Home',
       component: Home
+    },
+    {
+      path: '/video',
+      name: 'Video',
+      component: () => import('@/pages/video/index.vue'),
+      props: (route) => {
+        return {
+          videoSrc: route.query.videoSrc
+        }
+      }
     }
   ]
 })

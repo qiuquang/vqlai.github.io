@@ -4,15 +4,30 @@
       <span class="tip">WHAT I DO</span>
       <h1 class="title">{{ title }}</h1>
       <span class="border"></span>
-      <ul>
-        <li class="projectLi" v-for="(item, index) in projectList" :key="index">
-          {{ item.title }}
-          <a :href="item.url" target="_blank">
-            <img src="../common/images/feiji.jpg" alt="适航司" />
+      <div class="projectLi" v-for="(item, index) in projectList" :key="index">
+        <img
+          class="imgUrl"
+          :src="require(`../common/images/${item.imgSrc}`)"
+          alt="适航司"
+        />
+        <div style="flex: 1;text-align:left">
+          <a v-if="item.url" class="title" :href="item.url" target="_blank">
+            {{ item.title }}
           </a>
-        </li>
-        <div class="clearfix"></div>
-      </ul>
+          <span class="title" v-else>
+            {{ item.title }}
+            <i @click="goVideoPage(item, index)" class="play"></i>
+          </span>
+          <div style="margin: 10px 0;font-size: 18px;">
+            涉及技术：
+            <p style="font-size: 16px;">{{ item.techs }}</p>
+          </div>
+          <div>
+            {{ item.desc }}
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
     </div>
   </div>
 </template>
@@ -26,10 +41,67 @@ export default {
       projectList: [
         {
           url: "https://amos.caac.gov.cn/#/home",
-          title: "适航司"
+          title: "适航审定运行管理系统",
+          imgSrc: "feiji.jpg",
+          techs:
+            "vue、element-ui、vuex、axios、pdfjs、rem.js、pageoffice、weboffice",
+          desc: "作为前端负责人，最多时候带领20个前端进行开发，"
+        },
+        {
+          url: "",
+          title: "运维监控系统",
+          imgSrc: "yanshi.png",
+          videoSrc: "yunwei.mp4"
+        },
+        {
+          url: "",
+          title: "跑道容量",
+          imgSrc: "paodao.jpg",
+          videoSrc: "paodao.mp4"
+        },
+        {
+          url: "",
+          title: "公务机系统",
+          imgSrc: "yanshi.png"
+        },
+        {
+          url: "",
+          title: "贵宾系统",
+          imgSrc: "yanshi.png"
+        },
+        {
+          url: "",
+          title: "流亭机场交接班系统",
+          imgSrc: "jiaojieban.png",
+          videoSrc: "jiaojieban.mp4"
+        },
+        {
+          url: "",
+          title: "A-CDM系统",
+          imgSrc: "yanshi.png"
+        },
+        {
+          url: "",
+          title: "颂康泰订票系统PC端",
+          imgSrc: "yanshi.png"
+        },
+        {
+          url: "",
+          title: "颂康泰订票系统APP端",
+          imgSrc: "yanshi.png"
         }
       ]
     };
+  },
+  methods: {
+    goVideoPage(item, index) {
+      console.log(item, index);
+      let routeUrl = this.$router.resolve({
+        path: "/video",
+        query: { videoSrc: item.videoSrc }
+      });
+      window.open(routeUrl.href, "_blank");
+    }
   }
 };
 </script>
@@ -93,27 +165,37 @@ export default {
   margin-top: -2px;
   background: #03a9f4;
 }
-
+.projectLi {
+  display: flex;
+  margin-bottom: 15px;
+  height: 270px;
+}
+.projectLi .imgUrl {
+  width: 40%;
+  margin-right: 20px;
+  border-radius: 15px;
+}
 ul {
   width: 100%;
   padding: 4% 0;
 }
-ul li {
-  float: left;
-  width: 20%;
-  margin-right: 5%;
-  height: 80%;
-  box-sizing: border-box;
+.projectLi {
   transition: transform 0.25s ease;
 }
 ul li img {
   width: 100%;
   display: block;
 }
-ul li:hover {
+.projectLi:hover {
   z-index: 100;
   -webkit-transform: scale(1.1);
-  transform: scale(1.2);
-  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transform: scale(1.1);
+}
+.play {
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  background-image: url("../common/images/play.png");
+  cursor: pointer;
 }
 </style>

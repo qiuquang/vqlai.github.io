@@ -10,6 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "video.js": "^7.17.0",
     "vue": "^2.5.2",
     "vue-awesome-swiper": "^3.1.2",
     "vue-particles": "^1.0.9",

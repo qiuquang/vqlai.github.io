@@ -6,6 +6,8 @@ import router from './router'
 
 import '@/common/css/reset.css'
 import '@/common/css/base.css'
+import Video from 'video.js'
+import 'video.js/dist/video-js.css'
 
 import VueParticles from 'vue-particles'
 // import VueAwesomeSwiper from 'vue-awesome-swiper'
@@ -16,6 +18,8 @@ Vue.use(VueParticles)
 
 Vue.config.productionTip = false // 线上改为true
 Vue.config.debug = true // 开启debug模式
+
+Vue.prototype.$video = Video
 
 /* eslint-disable no-new */
 new Vue({
