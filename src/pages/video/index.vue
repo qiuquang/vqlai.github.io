@@ -1,6 +1,6 @@
 <template>
   <div class="videoPlay">
-    <video-player :options="videoOptions" />
+    <video-player :class="{ xuanzhuan: isJJB }" :options="videoOptions" />
   </div>
 </template>
 <script>
@@ -14,6 +14,12 @@ export default {
     videoSrc: {
       type: String,
       default: "yunwei.mp4"
+    }
+  },
+  computed: {
+    // 是交接班的视频
+    isJJB() {
+      return this.videoSrc === "jiaojieban.mp4";
     }
   },
   data() {
@@ -40,6 +46,10 @@ export default {
   },
   created() {
     this.videoOptions.sources[0].src = `../../../static/video/${this.videoSrc}`;
+    if (this.isJJB) {
+      this.videoOptions.width = "560px";
+      this.videoOptions.height = "1100px";
+    }
   }
 };
 </script>
@@ -49,5 +59,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.xuanzhuan {
+  transform: rotate(270deg);
 }
 </style>
