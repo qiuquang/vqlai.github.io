@@ -14,13 +14,18 @@
           <a v-if="item.url" class="title" :href="item.url" target="_blank">
             {{ item.title }}
           </a>
-          <span class="title" v-else>
+          <span class="title" v-else-if="item.videoSrc">
             {{ item.title }}
             <i @click="goVideoPage(item, index)" class="play"></i>
           </span>
+          <span class="title" v-else>
+            {{ item.title }}
+            <el-image style="width: 16px; height: 16px" 
+            :src="require(`../common/images/imgicon.png`)" :preview-src-list="item.srcList"></el-image>
+          </span>
           <div style="margin: 10px 0;font-size: 18px;">
             涉及技术：
-            <p style="font-size: 16px;">{{ item.techs }}</p>
+            <span style="font-size: 16px;">{{ item.techs }}</span>
           </div>
           <div>
             {{ item.desc }}
@@ -37,53 +42,88 @@ export default {
   name: "project",
   data() {
     return {
+      showImgFlag: false,
       title: "我的项目",
       projectList: [
         {
           url: "https://amos.caac.gov.cn/#/home",
           title: "适航审定运行管理系统",
           imgSrc: "feiji.jpg",
-          techs:
-            "vue、element-ui、vuex、axios、pdfjs、rem.js、pageoffice、weboffice",
-          desc: "作为前端负责人，最多时候带领20个前端进行开发，"
+          techs: "vue、element-ui、vuex、axios、pdfjs、rem.js、pageoffice、weboffice",
+          desc: "作为该项目前端负责人，最多时候带领20个前端进行协同开发，时间紧，开发了一套vue本项目及iframe嵌入项目的框架"
         },
         {
           url: "",
           title: "运维监控系统",
           imgSrc: "yanshi.png",
-          videoSrc: "yunwei.mp4"
+          videoSrc: "yunwei.mp4",
+          techs: "vue、element-ui、vuex、echarts",
+          desc: "后台实时监控各服务器的使用情况，监控交换机网口的状态是否正常，前端用echarts折线图进行实时展示服务器使用情况"
         },
         {
           url: "",
           title: "跑道容量",
           imgSrc: "paodao.jpg",
-          videoSrc: "paodao.mp4"
+          videoSrc: "paodao.mp4",
+          techs: "vue、element-ui、vuex、echarts",
+          desc: "基于vue.js class动态绑定实现的样式"
         },
         {
           url: "",
           title: "公务机系统",
-          imgSrc: "yanshi.png"
+          imgSrc: "gongwuji.png",
+          srcList: [
+            '../../static/images/gwj/1.png',
+            '../../static/images/gwj/2.png',
+            '../../static/images/gwj/3.jpg',
+            '../../static/images/gwj/5.jpg',
+            '../../static/images/gwj/6.jpg',
+            '../../static/images/gwj/7.jpg',
+            '../../static/images/gwj/8.jpg',
+          ],
+          techs: "vue、element-ui、vuex、echarts、websocket",
         },
         {
           url: "",
           title: "贵宾系统",
-          imgSrc: "yanshi.png"
+          imgSrc: "guibin.png",
+          srcList: [
+            '../../static/images/gb/1.png',
+            '../../static/images/gb/2.png',
+            '../../static/images/gb/3.jpg',
+            '../../static/images/gb/4.jpg',
+            '../../static/images/gb/5.jpg',
+            '../../static/images/gb/13.jpg',
+            '../../static/images/gb/6.jpg',
+            '../../static/images/gb/7.jpg',
+            '../../static/images/gb/8.jpg',
+            '../../static/images/gb/9.jpg',
+            '../../static/images/gb/10.jpg',
+            '../../static/images/gb/11.jpg',
+            '../../static/images/gb/12.jpg',
+          ],
+          techs: "vue、element-ui、vuex、echarts、websocket",
         },
         {
           url: "",
           title: "流亭机场交接班系统",
           imgSrc: "jiaojieban.png",
-          videoSrc: "jiaojieban.mp4"
-        },
-        {
-          url: "",
-          title: "A-CDM系统",
-          imgSrc: "yanshi.png"
+          videoSrc: "jiaojieban.mp4",
+          techs: "vue、element-ui、vuex、echarts",
         },
         {
           url: "",
           title: "颂康泰订票系统PC端",
-          imgSrc: "yanshi.png"
+          imgSrc: "dppc.jpg",
+          srcList: [
+            '../../static/images/dppc/1.jpg',
+            '../../static/images/dppc/2.jpg',
+            '../../static/images/dppc/3.jpg',
+            '../../static/images/dppc/4.jpg',
+            '../../static/images/dppc/5.jpg',
+            '../../static/images/dppc/6.jpg',
+            '../../static/images/dppc/7.jpg',
+          ]
         },
         {
           url: "",
@@ -101,6 +141,12 @@ export default {
         query: { videoSrc: item.videoSrc }
       });
       window.open(routeUrl.href, "_blank");
+    },
+    showImg(item, index) {
+      console.log(item, index)
+      this.showImgFlag = true
+      this.srcList = item.srcList
+
     }
   }
 };
