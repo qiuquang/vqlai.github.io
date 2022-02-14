@@ -5,11 +5,13 @@
       <h1 class="title">{{ title }}</h1>
       <span class="border"></span>
       <div class="projectLi" v-for="(item, index) in projectList" :key="index">
+        <div class="imgUrl"> 
         <img
-          class="imgUrl"
+          class="imgUrlImg"
           :src="require(`../common/images/${item.imgSrc}`)"
           alt="适航司"
         />
+        </div>
         <div style="flex: 1;text-align:left">
           <a v-if="item.url" class="title" :href="item.url" target="_blank">
             {{ item.title }}
@@ -123,12 +125,15 @@ export default {
             '../../static/images/dppc/5.jpg',
             '../../static/images/dppc/6.jpg',
             '../../static/images/dppc/7.jpg',
-          ]
+          ],
+          techs: "vue、element-ui、vuex、echarts",
         },
         {
           url: "",
           title: "颂康泰订票系统APP端",
-          imgSrc: "yanshi.png"
+          imgSrc: "dpapp.jpg",
+          videoSrc: "dpapp.mp4",
+          techs: "vue、uniapp、vuex、uView",
         }
       ]
     };
@@ -213,13 +218,21 @@ export default {
 }
 .projectLi {
   display: flex;
-  margin-bottom: 15px;
+  border-radius: 15px;
   height: 270px;
+  margin-bottom: 20px;
 }
 .projectLi .imgUrl {
   width: 40%;
+  height: 100%;
   margin-right: 20px;
+  display: flex;
+  justify-content: center;
+}
+.projectLi .imgUrl .imgUrlImg{
+  max-width: 100%;
   border-radius: 15px;
+  max-height: 100%;
 }
 ul {
   width: 100%;
