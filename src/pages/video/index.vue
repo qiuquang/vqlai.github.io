@@ -45,7 +45,7 @@ export default {
     };
   },
   created() {
-    this.videoOptions.sources[0].src = `../../../static/video/${this.videoSrc}`;
+    this.videoOptions.sources[0].src = `${this.$staticSrcPath}/static/video/${this.videoSrc}`;
     if (this.isJJB) {
       this.videoOptions.width = "560px";
       this.videoOptions.height = "1100px";

@@ -24,6 +24,12 @@ Vue.config.debug = true // 开启debug模式
 
 Vue.prototype.$video = Video
 
+
+const location = window.location
+const pp = process.env.NODE_ENV === 'production' ? '/my-resume' : ''
+const staticSrcPath = `${location.protocol}//${location.host}${pp}`
+Vue.prototype.$staticSrcPath = staticSrcPath
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
